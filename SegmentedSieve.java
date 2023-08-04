@@ -22,7 +22,13 @@ class Codechef
         // and so on for all multiples of prime
         for(int i = 0; primes.get(i)*primes.get(i) <= b; i++) {
             int prime = primes.get(i);
+		//first miultiple of>= a(start number) 
             int j = (a/prime)*prime;
+		//if it is not perfectly divisible with  prime then we add + prime to j
+		/*
+  		example ->  a = 13 
+			13/2 * 2 = 12 but it is not greater than or equal to 13 so we add +prime = 14  we mark this as false and so on for all multiples
+		*/
             if(j<a){
                 j+=prime;
             }
